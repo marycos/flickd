@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.8.2)
+  - Kanna (4.0.3)
+  - TMDBSwift (0.5.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kanna (~> 4.0.0)
+  - TMDBSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Kanna
+    - TMDBSwift
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
+  TMDBSwift: 9220f3dcee23372c05b92f8c111f5f4c37185aee
+
+PODFILE CHECKSUM: 633bc5524222ce2068fc8022be1d9faba1199543
+
+COCOAPODS: 1.6.1

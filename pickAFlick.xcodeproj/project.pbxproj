@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		357F9E74EF52631C56D5BF53 /* Pods_pickAFlick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013E0204D040F43DA356D87C /* Pods_pickAFlick.framework */; };
+		95A705CE225FCFB000A264CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A705CD225FCFB000A264CA /* Main.storyboard */; };
+		95C21E58225F7F0300462A9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C21E57225F7F0300462A9B /* AppDelegate.swift */; };
+		95C21E5A225F7F0300462A9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C21E59225F7F0300462A9B /* ViewController.swift */; };
+		95C21E5F225F7F0600462A9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C21E5E225F7F0600462A9B /* Assets.xcassets */; };
+		95C21E62225F7F0600462A9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C21E60225F7F0600462A9B /* LaunchScreen.storyboard */; };
+		95C21E6A225F840700462A9B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C21E69225F840700462A9B /* Movie.swift */; };
+		95D78A4022651B0600B0D863 /* userInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D78A3F22651B0600B0D863 /* userInterface.swift */; };
+		95D78A4222651E8A00B0D863 /* movieChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D78A4122651E8A00B0D863 /* movieChoiceViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		013E0204D040F43DA356D87C /* Pods_pickAFlick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pickAFlick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		399107C83ED230FB891F0122 /* Pods-pickAFlick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pickAFlick.release.xcconfig"; path = "Target Support Files/Pods-pickAFlick/Pods-pickAFlick.release.xcconfig"; sourceTree = "<group>"; };
+		95A705CD225FCFB000A264CA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		95C21E54225F7F0300462A9B /* pickAFlick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pickAFlick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95C21E57225F7F0300462A9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		95C21E59225F7F0300462A9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		95C21E5E225F7F0600462A9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95C21E61225F7F0600462A9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		95C21E63225F7F0600462A9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95C21E69225F840700462A9B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		95D78A3F22651B0600B0D863 /* userInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInterface.swift; sourceTree = "<group>"; };
+		95D78A4122651E8A00B0D863 /* movieChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieChoiceViewController.swift; sourceTree = "<group>"; };
+		F485E0C6AEA7D27C6F24447F /* Pods-pickAFlick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pickAFlick.debug.xcconfig"; path = "Target Support Files/Pods-pickAFlick/Pods-pickAFlick.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95C21E51225F7F0300462A9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				357F9E74EF52631C56D5BF53 /* Pods_pickAFlick.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65AEAD22F5B552C3100CF1E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				013E0204D040F43DA356D87C /* Pods_pickAFlick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95C21E4B225F7F0300462A9B = {
+			isa = PBXGroup;
+			children = (
+				95C21E56225F7F0300462A9B /* pickAFlick */,
+				95C21E55225F7F0300462A9B /* Products */,
+				D2000845C95C129EE1FDCB31 /* Pods */,
+				65AEAD22F5B552C3100CF1E8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		95C21E55225F7F0300462A9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95C21E54225F7F0300462A9B /* pickAFlick.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95C21E56225F7F0300462A9B /* pickAFlick */ = {
+			isa = PBXGroup;
+			children = (
+				95A705CD225FCFB000A264CA /* Main.storyboard */,
+				95C21E57225F7F0300462A9B /* AppDelegate.swift */,
+				95C21E59225F7F0300462A9B /* ViewController.swift */,
+				95D78A4122651E8A00B0D863 /* movieChoiceViewController.swift */,
+				95D78A3F22651B0600B0D863 /* userInterface.swift */,
+				95C21E69225F840700462A9B /* Movie.swift */,
+				95C21E5E225F7F0600462A9B /* Assets.xcassets */,
+				95C21E60225F7F0600462A9B /* LaunchScreen.storyboard */,
+				95C21E63225F7F0600462A9B /* Info.plist */,
+			);
+			path = pickAFlick;
+			sourceTree = "<group>";
+		};
+		D2000845C95C129EE1FDCB31 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F485E0C6AEA7D27C6F24447F /* Pods-pickAFlick.debug.xcconfig */,
+				399107C83ED230FB891F0122 /* Pods-pickAFlick.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95C21E53225F7F0300462A9B /* pickAFlick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95C21E66225F7F0600462A9B /* Build configuration list for PBXNativeTarget "pickAFlick" */;
+			buildPhases = (
+				F225004FDFBD9E2BC730B961 /* [CP] Check Pods Manifest.lock */,
+				95C21E50225F7F0300462A9B /* Sources */,
+				95C21E51225F7F0300462A9B /* Frameworks */,
+				95C21E52225F7F0300462A9B /* Resources */,
+				899E1439B2F0B7B1ABD360C9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pickAFlick;
+			productName = pickAFlick;
+			productReference = 95C21E54225F7F0300462A9B /* pickAFlick.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95C21E4C225F7F0300462A9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Cosentini Mary";
+				TargetAttributes = {
+					95C21E53225F7F0300462A9B = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 95C21E4F225F7F0300462A9B /* Build configuration list for PBXProject "pickAFlick" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 95C21E4B225F7F0300462A9B;
+			productRefGroup = 95C21E55225F7F0300462A9B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95C21E53225F7F0300462A9B /* pickAFlick */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95C21E52225F7F0300462A9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95A705CE225FCFB000A264CA /* Main.storyboard in Resources */,
+				95C21E62225F7F0600462A9B /* LaunchScreen.storyboard in Resources */,
+				95C21E5F225F7F0600462A9B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		899E1439B2F0B7B1ABD360C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-pickAFlick/Pods-pickAFlick-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
+				"${BUILT_PRODUCTS_DIR}/TMDBSwift/TMDBSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TMDBSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-pickAFlick/Pods-pickAFlick-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F225004FDFBD9E2BC730B961 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-pickAFlick-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95C21E50225F7F0300462A9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95C21E5A225F7F0300462A9B /* ViewController.swift in Sources */,
+				95C21E58225F7F0300462A9B /* AppDelegate.swift in Sources */,
+				95D78A4222651E8A00B0D863 /* movieChoiceViewController.swift in Sources */,
+				95D78A4022651B0600B0D863 /* userInterface.swift in Sources */,
+				95C21E6A225F840700462A9B /* Movie.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		95C21E60225F7F0600462A9B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95C21E61225F7F0600462A9B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		95C21E64225F7F0600462A9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		95C21E65225F7F0600462A9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95C21E67225F7F0600462A9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F485E0C6AEA7D27C6F24447F /* Pods-pickAFlick.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NUK87L932;
+				INFOPLIST_FILE = pickAFlick/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Mary-Cosentini.pickAFlick";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95C21E68225F7F0600462A9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 399107C83ED230FB891F0122 /* Pods-pickAFlick.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NUK87L932;
+				INFOPLIST_FILE = pickAFlick/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Mary-Cosentini.pickAFlick";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95C21E4F225F7F0300462A9B /* Build configuration list for PBXProject "pickAFlick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95C21E64225F7F0600462A9B /* Debug */,
+				95C21E65225F7F0600462A9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95C21E66225F7F0600462A9B /* Build configuration list for PBXNativeTarget "pickAFlick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95C21E67225F7F0600462A9B /* Debug */,
+				95C21E68225F7F0600462A9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95C21E4C225F7F0300462A9B /* Project object */;
+}

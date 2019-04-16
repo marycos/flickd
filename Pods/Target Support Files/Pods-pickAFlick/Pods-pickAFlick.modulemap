@@ -1,0 +1,6 @@
+framework module Pods_pickAFlick {
+  umbrella header "Pods-pickAFlick-umbrella.h"
+
+  export *
+  module * { export * }
+}
