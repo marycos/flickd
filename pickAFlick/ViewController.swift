@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var movies:[Movie] = []
     var movieName:String = ""
     var movieDesc:String = ""
+    var movieYear:String = ""
     
     override func viewDidLoad() {
         startLanding()
@@ -55,8 +56,8 @@ class ViewController: UIViewController {
     
     @objc func buttonAction(sender: UIButton!) {
         let textFieldAsString:String = userInput.text ?? "error"
+        print(textFieldAsString)
         scrapeLetterboxd(textField: textFieldAsString)
-        moveToSecondViewController()
     }
     
     func moveToSecondViewController() {
@@ -70,6 +71,7 @@ class ViewController: UIViewController {
         Alamofire.request(textField).responseString{ response in
             self.html = response.result.value
             self.parseHTML(html: response.result.value!)
+            self.moveToSecondViewController()
         }
     }
     
@@ -84,8 +86,7 @@ class ViewController: UIViewController {
             let number = Int.random(in: 0 ... (i - 1))
             self.movieName = doc.xpath("//div[@class='poster film-poster really-lazy-load']//@alt")[number].text ?? "nil"
             SearchMDB.movie(query: self.movieName, language: "en", page: 1, includeAdult: true, year: nil, primaryReleaseYear: nil){
-                data, movies in
-                self.movieDesc = movies?[0].overview ?? "nil"
+                data, movies in self.movieDesc = movies?[0].overview ?? "nil"
             }
         }catch {
             print("error")
