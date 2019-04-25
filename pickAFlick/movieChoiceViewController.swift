@@ -7,16 +7,26 @@
 //
 
 import UIKit
+import Alamofire
+import Kanna
+import TMDBSwift
+
+//protocol ViewConrollerDelegate {
+//    func scrapeLetterboxd(textField:String)
+//}
 
 class movieChoiceViewController: UIViewController{
     
+    lazy var retryURL:String = ""
     let vc = ViewController()
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = hexStringToUIColor(hex: "#274060")
         view.addSubview(movieLabel)
         view.addSubview(descriptionLabel)
+        view.addSubview(retryButton)
         print(movieLabel)
         print(descriptionLabel)
     }
@@ -28,7 +38,7 @@ class movieChoiceViewController: UIViewController{
         view.textAlignment = .center
         return view
     }()
-        
+    
     lazy var descriptionLabel:UILabel! = {
         let view = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 250))
         view.textColor = hexStringToUIColor(hex: "#9C7178")
@@ -37,6 +47,53 @@ class movieChoiceViewController: UIViewController{
         view.numberOfLines = 0
         return view
     }()
+    
+    lazy var retryButton:UIButton! = {
+        let view = UIButton(frame: CGRect(x: 100, y: 600, width: 200, height: 50))
+        view.backgroundColor = hexStringToUIColor(hex: "#9C7178")
+        view.setTitle("Pick again", for: .normal)
+        view.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        return view
+    }()
+    
+    @objc func buttonAction(sender: UIButton!) {
+        pickAgain()
+    }
+    
+    func pickAgain(){
+        scrapeLetterboxd(textField: retryURL)
+    }
+    
+    func scrapeLetterboxd(textField:String){
+        Alamofire.request(textField).responseString{ response in
+            self.vc.html = response.result.value
+            self.parseHTML(html: response.result.value!)
+        }
+    }
+    
+    func parseHTML(html:String){
+        do {
+            let doc = try Kanna.HTML(html: html, encoding: String.Encoding.utf8)
+            var i = 0
+            for _ in doc.xpath("//div[@class='poster film-poster really-lazy-load']//@alt"){
+                i+=1
+            }
+            let number = Int.random(in: 0 ... (i - 1))
+            self.vc.movieName = doc.xpath("//div[@class='poster film-poster really-lazy-load']//@alt")[number].text ?? "nil"
+            SearchMDB.movie(query: self.vc.movieName, language: "en", page: 1, includeAdult: true, year: nil, primaryReleaseYear: nil){
+                data, movies in self.vc.movieDesc = movies?[0].overview ?? "nil"
+                self.movieLabel.text = self.vc.movieName
+                self.descriptionLabel.text = self.vc.movieDesc
+            }
+            SearchMDB.movie(query: self.vc.movieName, language: "en", page: 1, includeAdult: true, year: nil, primaryReleaseYear: nil){
+                data, movies in self.vc.movieID = movies?[0].id ?? 0
+            }
+            print(self.vc.movieID)
+            
+        }catch {
+            print("error")
+        }
+    }
     
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
@@ -60,5 +117,5 @@ class movieChoiceViewController: UIViewController{
         )
     }
     
-
+    
 }

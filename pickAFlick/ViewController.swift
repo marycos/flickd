@@ -17,24 +17,24 @@ class ViewController: UIViewController {
     var movies:[Movie] = []
     var movieName:String = ""
     var movieDesc:String = ""
-    var movieYear:String = ""
+    var movieID:Int = 0
+    var textFieldAsString:String = ""
     
     override func viewDidLoad() {
         startLanding()
-
     }
     
     lazy var instructionLabel:UILabel! = {
-       let view = UILabel(frame: CGRect(x: 0, y: 0, width: 500, height: 21))
-       view.center = CGPoint(x: 175, y: 175)
-       view.text = "Enter the URL of the Letterboxd list:"
-       view.textAlignment = .center
-       view.textColor = hexStringToUIColor(hex: "#9C7178")
-       return view
+        let view = UILabel(frame: CGRect(x: 0, y: 0, width: 500, height: 21))
+        view.center = CGPoint(x: 175, y: 175)
+        view.text = "Enter the URL of the Letterboxd list:"
+        view.textAlignment = .center
+        view.textColor = hexStringToUIColor(hex: "#9C7178")
+        return view
     }()
     
     lazy var userInput:UITextField! = {
-       let view = UITextField(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
+        let view = UITextField(frame: CGRect(x: 0, y: 0, width: 300, height: 200))
         view.center = CGPoint(x: 185, y: 300)
         view.borderStyle = UITextField.BorderStyle.roundedRect
         view.autocorrectionType = UITextAutocorrectionType.no
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         view.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         return view
     }()
-
+    
     lazy var enterButton:UIButton! = {
         let view = UIButton(frame: CGRect(x: 140, y: 425, width: 100, height: 50))
         view.backgroundColor = hexStringToUIColor(hex: "#9C7178")
@@ -54,24 +54,32 @@ class ViewController: UIViewController {
         return view
     }()
     
+    let alert = UIAlertController(title: nil, message: "Loading...", preferredStyle: .alert)
+    let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+    
     @objc func buttonAction(sender: UIButton!) {
-        let textFieldAsString:String = userInput.text ?? "error"
+        textFieldAsString = userInput.text ?? "error"
         print(textFieldAsString)
         scrapeLetterboxd(textField: textFieldAsString)
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating()
+        present(alert, animated: true, completion: nil)
     }
     
     func moveToSecondViewController() {
         let vc = movieChoiceViewController()
         vc.movieLabel.text = movieName
         vc.descriptionLabel.text = movieDesc
-        self.navigationController?.pushViewController(vc, animated: true)   
+        vc.retryURL = textFieldAsString
+        self.navigationController?.pushViewController(vc, animated: true)
+        dismiss(animated: false, completion: nil)
     }
     
     func scrapeLetterboxd(textField:String){
         Alamofire.request(textField).responseString{ response in
             self.html = response.result.value
             self.parseHTML(html: response.result.value!)
-            self.moveToSecondViewController()
         }
     }
     
@@ -86,8 +94,14 @@ class ViewController: UIViewController {
             let number = Int.random(in: 0 ... (i - 1))
             self.movieName = doc.xpath("//div[@class='poster film-poster really-lazy-load']//@alt")[number].text ?? "nil"
             SearchMDB.movie(query: self.movieName, language: "en", page: 1, includeAdult: true, year: nil, primaryReleaseYear: nil){
-                data, movies in self.movieDesc = movies?[0].overview ?? "nil"
+                data, movies in self.movieID = movies?[0].id ?? 0
             }
+            SearchMDB.movie(query: self.movieName, language: "en", page: 1, includeAdult: true, year: nil, primaryReleaseYear: nil){
+                data, movies in self.movieDesc = movies?[0].overview ?? "nil"
+                self.moveToSecondViewController()
+            }
+            print(self.movieID)
+            
         }catch {
             print("error")
         }
@@ -115,6 +129,8 @@ class ViewController: UIViewController {
         )
     }
     
+    
+    
     func startLanding(){
         TMDBConfig.apikey = "81724aee59b3422b5b90e6801e0b2eac"
         super.viewDidLoad()
@@ -122,8 +138,10 @@ class ViewController: UIViewController {
         view.addSubview(instructionLabel)
         view.addSubview(userInput)
         view.addSubview(enterButton)
+        alert.view.addSubview(loadingIndicator)
+        
     }
-  
+    
     
 }
 
