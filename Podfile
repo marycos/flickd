@@ -7,5 +7,6 @@ target 'pickAFlick' do
    pod 'Kanna', '~> 4.0.0'
    pod 'Alamofire'
    pod 'TMDBSwift'
+   pod 'Nuke', '~> 7.0'
 
 end

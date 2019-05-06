@@ -59,7 +59,7 @@ class ViewController: UIViewController {
     
     @objc func buttonAction(sender: UIButton!) {
         textFieldAsString = userInput.text ?? "error"
-        print(textFieldAsString)
+        //print(textFieldAsString)
         scrapeLetterboxd(textField: textFieldAsString)
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.gray
@@ -94,14 +94,13 @@ class ViewController: UIViewController {
             let number = Int.random(in: 0 ... (i - 1))
             self.movieName = doc.xpath("//div[@class='poster film-poster really-lazy-load']//@alt")[number].text ?? "nil"
             SearchMDB.movie(query: self.movieName, language: "en", page: 1, includeAdult: true, year: nil, primaryReleaseYear: nil){
-                data, movies in self.movieID = movies?[0].id ?? 0
+                data, movies in self.movieDesc = movies?[0].overview ?? "nil"
             }
             SearchMDB.movie(query: self.movieName, language: "en", page: 1, includeAdult: true, year: nil, primaryReleaseYear: nil){
-                data, movies in self.movieDesc = movies?[0].overview ?? "nil"
+                data, movies in self.movieID = movies?[0].id ?? 0
+                print(self.movieID)
                 self.moveToSecondViewController()
             }
-            print(self.movieID)
-            
         }catch {
             print("error")
         }

@@ -10,10 +10,7 @@ import UIKit
 import Alamofire
 import Kanna
 import TMDBSwift
-
-//protocol ViewConrollerDelegate {
-//    func scrapeLetterboxd(textField:String)
-//}
+import Nuke
 
 class movieChoiceViewController: UIViewController{
     
@@ -27,22 +24,24 @@ class movieChoiceViewController: UIViewController{
         view.addSubview(movieLabel)
         view.addSubview(descriptionLabel)
         view.addSubview(retryButton)
-        print(movieLabel)
-        print(descriptionLabel)
+        view.addSubview(poster)
+//        print(movieLabel)
+//        print(descriptionLabel)
     }
     
     lazy var movieLabel:UILabel! = {
-        let view = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        let view = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
         view.textColor = hexStringToUIColor(hex: "#9C7178")
-        view.center = CGPoint(x: 200, y: 200)
+        view.center = CGPoint(x: 200, y: 100)
         view.textAlignment = .center
+        view.font = UIFont(name: view.font.fontName, size: 30)
         return view
     }()
     
     lazy var descriptionLabel:UILabel! = {
         let view = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 250))
         view.textColor = hexStringToUIColor(hex: "#9C7178")
-        view.center = CGPoint(x: 200, y: 400)
+        view.center = CGPoint(x: 200, y: 500)
         view.textAlignment = .center
         view.numberOfLines = 0
         return view
@@ -53,6 +52,13 @@ class movieChoiceViewController: UIViewController{
         view.backgroundColor = hexStringToUIColor(hex: "#9C7178")
         view.setTitle("Pick again", for: .normal)
         view.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        return view
+    }()
+    
+    lazy var poster:UIImageView! = {
+        let view = UIImageView(frame: CGRect(x: 10, y: 10, width: 125, height: 187))
+        view.center = CGPoint(x: 200, y: 250)
+
         return view
     }()
     
@@ -85,11 +91,8 @@ class movieChoiceViewController: UIViewController{
                 self.movieLabel.text = self.vc.movieName
                 self.descriptionLabel.text = self.vc.movieDesc
             }
-            SearchMDB.movie(query: self.vc.movieName, language: "en", page: 1, includeAdult: true, year: nil, primaryReleaseYear: nil){
-                data, movies in self.vc.movieID = movies?[0].id ?? 0
-            }
-            print(self.vc.movieID)
-            
+            let url = URL(string: "https://a.ltrbxd.com/resized/sm/upload/t5/u3/sp/g3/qV2t4Eu6nMbhf6frWYnVXPqKJYT-0-125-0-187-crop.jpg?k=2129970692")
+            Nuke.loadImage(with: url!, into: poster)
         }catch {
             print("error")
         }
@@ -117,5 +120,6 @@ class movieChoiceViewController: UIViewController{
         )
     }
     
-    
 }
+
+
