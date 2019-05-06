@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     var movieName:String = ""
     var movieDesc:String = ""
     var movieID:Int = 0
+    var posterURLString:String = "https://image.tmdb.org/t/p/original"
+    var posterURL = URL(string: "")
     var textFieldAsString:String = ""
     
     override func viewDidLoad() {

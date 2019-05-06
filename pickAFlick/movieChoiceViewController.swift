@@ -68,6 +68,10 @@ class movieChoiceViewController: UIViewController{
     
     func pickAgain(){
         scrapeLetterboxd(textField: retryURL)
+        self.vc.loadingIndicator.hidesWhenStopped = true
+        self.vc.loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        self.vc.loadingIndicator.startAnimating()
+        self.vc.present(self.vc.alert, animated: true, completion: nil)
     }
     
     func scrapeLetterboxd(textField:String){
@@ -97,18 +101,21 @@ class movieChoiceViewController: UIViewController{
                 MovieMDB.images(movieID: self.vc.movieID, language: "en"){
                     data, imgs in
                     if let images = imgs{
-                        print(images.posters[0].file_path ?? "nil")
-                        //Backdrop & stills might return `nil`
-                        // print(images.stills[0].file_path)
-                        //print(images.backdrops[0].file_path)
+                        self.vc.posterURLString.append(contentsOf: images.posters[0].file_path ?? "nil")
+                        self.vc.posterURL = URL(string: self.vc.posterURLString)
+                        Nuke.loadImage(with: self.vc.posterURL!, into: self.poster)
+                        if(Nuke.loadImage(with: self.vc.posterURL!, into: self.poster)?.progress.isFinished == true){
+                            self.vc.moveToSecondViewController()
+                        }
                     }
-                self.vc.moveToSecondViewController()
-            }
+                }
+                
             }
         }catch {
             print("error")
         }
     }
+    
     
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
