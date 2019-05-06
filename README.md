@@ -6,10 +6,10 @@ Flickd is an iOS app that you can use to decide what movie you want to watch.
 I watch a lot of movies and I use <a href="https://letterboxd.com/marycos/">Letterboxd</a> to log, rate and keep track of them all. My current Letterboxd <a href="https://letterboxd.com/marycos/watchlist/">watchlist</a> has 76 movies in it and I can assure you it's going to continue to grow. I am indecisive so picking a movie to watch from my watchlist often is a long drawn out task. I wanted to make an iOS app that will make that decision for me. Users can also input the link of a list on letterboxd as well if they're looking to decide from there
 
 <h3>APIs used in this application</h3>
-- <a href="https://github.com/Alamofire/Alamofire">Alamofire</a> 
-- <a href="https://github.com/tid-kijyun/Kanna">Kanna</a>
-- <a href="https://github.com/gkye/TheMovieDatabaseSwiftWrapper">The Movie Database Swift Wrapper</a>
-- <a href="https://github.com/kean/Nuke">Nuke</a>
+- <a href="https://github.com/Alamofire/Alamofire">Alamofire</a> <br>
+- <a href="https://github.com/tid-kijyun/Kanna">Kanna</a> <br>
+- <a href="https://github.com/gkye/TheMovieDatabaseSwiftWrapper">The Movie Database Swift Wrapper</a> <br>
+- <a href="https://github.com/kean/Nuke">Nuke</a> <br>
 
 <h3>Running the application</h3>
 When running this app, all you have to do is clone the app and then open "pickAFlick.xcworkspace". Then you can run the application on either the XCode simulator or an iPhone.
