@@ -17,7 +17,7 @@ When running this app, all you have to do is clone the app and then open "pickAF
 <h3>Example link to input on the app</h3>
 Here is a letterboxd <a href="https://letterboxd.com/marycos/list/movies-by-women/">list</a> that you can use to try out the app if you are not familiar with Letterboxd.
 
-<h2>Future Improvements in the App</h2>
+<h3>Future Improvements in the App</h3>
 - Make the input box so the user only has to input the list name and the username of the person who created it
 - Some lists extend into multiple pages
 - Add a button so users can flag when incorrect data (poster or synopsis) is pulled from The Movie Database API
