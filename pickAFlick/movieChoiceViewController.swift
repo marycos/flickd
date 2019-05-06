@@ -91,8 +91,20 @@ class movieChoiceViewController: UIViewController{
                 self.movieLabel.text = self.vc.movieName
                 self.descriptionLabel.text = self.vc.movieDesc
             }
-            let url = URL(string: "https://a.ltrbxd.com/resized/sm/upload/t5/u3/sp/g3/qV2t4Eu6nMbhf6frWYnVXPqKJYT-0-125-0-187-crop.jpg?k=2129970692")
-            Nuke.loadImage(with: url!, into: poster)
+            SearchMDB.movie(query: self.vc.movieName, language: "en", page: 1, includeAdult: true, year: nil, primaryReleaseYear: nil){
+                data, movies in self.vc.movieID = movies?[0].id ?? 0
+                //print(self.vc.movieID)
+                MovieMDB.images(movieID: self.vc.movieID, language: "en"){
+                    data, imgs in
+                    if let images = imgs{
+                        print(images.posters[0].file_path ?? "nil")
+                        //Backdrop & stills might return `nil`
+                        // print(images.stills[0].file_path)
+                        //print(images.backdrops[0].file_path)
+                    }
+                self.vc.moveToSecondViewController()
+            }
+            }
         }catch {
             print("error")
         }
