@@ -18,9 +18,9 @@ When running this app, all you have to do is clone the app and then open "pickAF
 Here is a letterboxd <a href="https://letterboxd.com/marycos/list/movies-by-women/">list</a> that you can use to try out the app if you are not familiar with Letterboxd.
 
 <h3>Future Improvements in the App</h3>
+- Clean up all the duplicate code in the view controllers<br>
 - Add posters <br>
-- Make the input box so the user only has to input the list name and the username of the person who created it <br>
-- Some lists extend into multiple pages <br>
+- Make the input box so the user only has to input the list name and the username of the person who created it<br>
+- Some lists extend into multiple pages, so I want it to parse all pages of a list if a user enters the URL of a list without specifying what page<br>
 - Add a button so users can flag when incorrect data (poster or synopsis) is pulled from The Movie Database API <br>
 - When Letterboxd makes their API public, implement their API instead of using so many different APIs <br>
-
